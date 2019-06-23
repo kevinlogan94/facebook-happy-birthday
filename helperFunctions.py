@@ -58,6 +58,9 @@ def type_on_screen(text):
 def hit_enter_key():
     pyautogui.press('enter')
 
+def move_mouse(xcoord, ycoord):
+    pyautogui.moveTo(xcoord,ycoord)
+
 def type_then_enter(text):
     type_on_screen(text)
     hit_enter_key()
@@ -89,7 +92,8 @@ def extractComputerData():
     if subprocess.call("system_profiler SPDisplaysDataType | grep Retina", shell=True) == 0:
         RetinaScreen = True
     data = {
-        "RetinaScreen": RetinaScreen
+        "RetinaScreen": RetinaScreen,
+        "screenSize": pyautogui.size()
     }
     print("Done!")
     return data
