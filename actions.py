@@ -32,12 +32,12 @@ def type_in_url(text):
     hit_enter_key()
 
 
-def wish_everyone_happy_birthday():
+def wish_everyone_happy_birthday(text):
     click_all_images("images/birthday-text-area-her.png",
-                     send_happy_birthday_message)
+                     send_happy_birthday_message, text)
     click_all_images("images/birthday-text-area-his.png",
-                     send_happy_birthday_message)
+                     send_happy_birthday_message, text)
 
 
-def send_happy_birthday_message():
-    type_then_enter("Happy Birthday! I hope it's one for the books!")
+def send_happy_birthday_message(text):
+    type_then_enter(text)

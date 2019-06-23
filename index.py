@@ -13,7 +13,7 @@ try:
     open_brave()
     open_new_tab()
     type_in_url("https://www.facebook.com/events/birthdays/")
-    wish_everyone_happy_birthday()
+    wish_everyone_happy_birthday("Happy Birthday! I hope it's one for the books!")
     print("Finished!")
 except KeyboardInterrupt:
     print("Cancelled!")

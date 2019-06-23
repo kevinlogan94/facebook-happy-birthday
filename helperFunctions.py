@@ -5,7 +5,7 @@ import pyautogui
 import subprocess
 import time
 
-def click_all_images(png_name, callback=None):
+def click_all_images(png_name, callback=None, callback_arg=None):
     search_screen_for_image(png_name)
     for location in list(pyautogui.locateAllOnScreen(png_name)):
         image = pyautogui.center(location)
@@ -18,8 +18,8 @@ def click_all_images(png_name, callback=None):
         pyautogui.moveTo(x, y)
         pyautogui.click()
         # pyautogui.click()
-        if callback != None:
-            callback()
+        if callback != None and callback_arg != None:
+            callback(callback_arg)
 
 def click_image(png_name):
     # In case, a page is loading...
