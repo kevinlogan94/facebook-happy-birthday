@@ -7,6 +7,7 @@ from helperFunctions import computerData
 from helperFunctions import move_mouse
 from helperFunctions import hit_enter_key
 from helperFunctions import hit_key_binding
+from helperFunctions import search_screen_for_image
 from helperFunctions import type_on_screen
 from helperFunctions import type_then_enter
 
@@ -21,6 +22,8 @@ def open_brave():
     type_on_screen("Brave Browser")
     hit_enter_key()
 
+def check_for_browser_mac():
+    search_screen_for_image("images/redxicon.png")
 
 def open_new_tab():
     hit_key_binding("command", "t")
