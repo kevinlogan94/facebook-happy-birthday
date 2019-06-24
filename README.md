@@ -19,3 +19,16 @@ Now, install pyautogui
 ```
 pip3 install pyautogui 
 ```
+
+## This script makes the following assumptions
+
+- You have the Brave Browser downloaded
+- Your computer runs relatively fast
+- You're using a Mac
+- You have already logged into Facebook
+
+## Trigger scripts
+
+```
+pip3 /path/to/facebook-happy-birthday/index.py
+```
