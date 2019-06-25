@@ -40,7 +40,7 @@ def click_image(png_name):
 
 def search_screen_for_image(png_name):
     location = None
-    timeout = time.time() + 10   # 1 minutes from now
+    timeout = time.time() + 10   # 10 seconds from now
     print("Searching for " + png_name)
     while location == None:
         time.sleep(0.25)  # set a delay so this doesn't hog cpu
