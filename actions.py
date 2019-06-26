@@ -28,6 +28,9 @@ def check_for_browser_mac():
 def open_new_tab():
     hit_key_binding("command", "t")
 
+def close_tab():
+    hit_key_binding("command", "w")
+
 
 def type_in_url(text):
     hit_key_binding("command", "l")

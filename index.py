@@ -2,6 +2,7 @@
 
 # Script to wish happy birthdays on facebook
 from actions import check_for_browser_mac
+from actions import close_tab
 from actions import open_brave
 from actions import open_new_tab
 from actions import type_in_url
@@ -16,6 +17,7 @@ try:
     open_new_tab()
     type_in_url("https://www.facebook.com/events/birthdays/")
     wish_everyone_happy_birthday("Happy Birthday! I hope it's one for the books!")
+    close_tab()
     print("Finished!")
 except KeyboardInterrupt:
     print("Cancelled!")
