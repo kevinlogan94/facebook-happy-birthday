@@ -16,7 +16,7 @@ try:
     check_for_browser_mac()
     open_new_tab()
     type_in_url("https://www.facebook.com/events/birthdays/")
-    wish_everyone_happy_birthday("Happy Birthday! I hope it's one for the books!")
+    wish_everyone_happy_birthday()
     close_tab()
     print("Finished!")
 except KeyboardInterrupt:

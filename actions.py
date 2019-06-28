@@ -4,6 +4,7 @@
 
 from helperFunctions import click_all_images
 from helperFunctions import computerData
+from helperFunctions import get_birthday_quote
 from helperFunctions import move_mouse
 from helperFunctions import hit_enter_key
 from helperFunctions import hit_key_binding
@@ -38,11 +39,11 @@ def type_in_url(text):
     hit_enter_key()
 
 
-def wish_everyone_happy_birthday(text):
+def wish_everyone_happy_birthday():
     click_all_images("images/birthday-text-area-her.png",
-                     send_happy_birthday_message, text)
+                     send_happy_birthday_message, get_birthday_quote())
     click_all_images("images/birthday-text-area-his.png",
-                     send_happy_birthday_message, text)
+                     send_happy_birthday_message, get_birthday_quote())
 
 
 def send_happy_birthday_message(text):

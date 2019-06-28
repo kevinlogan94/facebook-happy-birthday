@@ -4,6 +4,9 @@
 import pyautogui
 import subprocess
 import time
+import json
+import random
+from os.path import join
 
 def click_all_images(png_name, callback=None, callback_arg=None):
     search_screen_for_image(png_name)
@@ -83,6 +86,12 @@ def print_same_line(text):
     print(text, end='')
     # Remove the old printed location.
     print('\b' * len(text), end='', flush=True)
+
+def get_birthday_quote():
+    with open('./quotes.json', 'r') as quotes:
+        birthday_quotes = json.load(quotes)
+
+    return random.choice(birthday_quotes)
 
 # Consider moving this to a different file.
 def extractComputerData():
