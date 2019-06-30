@@ -5,9 +5,10 @@
 from helperFunctions import click_all_images
 from helperFunctions import computerData
 from helperFunctions import get_birthday_quote
-from helperFunctions import move_mouse
 from helperFunctions import hit_enter_key
 from helperFunctions import hit_key_binding
+from helperFunctions import move_mouse
+from helperFunctions import notify
 from helperFunctions import search_screen_for_image
 from helperFunctions import type_on_screen
 from helperFunctions import type_then_enter
@@ -38,13 +39,18 @@ def type_in_url(text):
     type_on_screen(text)
     hit_enter_key()
 
+def notification(message, title):
+    notify(message, title)
+
 
 def wish_everyone_happy_birthday():
     click_all_images("images/birthday-text-area-her.png",
-                     send_happy_birthday_message, get_birthday_quote())
+                     send_happy_birthday_message, get_birthday_quote)
     click_all_images("images/birthday-text-area-his.png",
-                     send_happy_birthday_message, get_birthday_quote())
+                     send_happy_birthday_message, get_birthday_quote)
 
 
 def send_happy_birthday_message(text):
     type_then_enter(text)
+    # In case the first didn't go through.
+    hit_enter_key()

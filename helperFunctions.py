@@ -6,7 +6,16 @@ import subprocess
 import time
 import json
 import random
-from os.path import join
+
+def notify(message, title):
+    scpt = '''
+        on run {x, y}
+            display notification x with title y
+        end run'''
+    args = [message, title]
+
+    p = subprocess.Popen(['osascript', '-'] + args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+    p.communicate(scpt)
 
 def click_all_images(png_name, callback=None, callback_arg=None):
     search_screen_for_image(png_name)
@@ -20,8 +29,9 @@ def click_all_images(png_name, callback=None, callback_arg=None):
             y = y / 2
         pyautogui.moveTo(x, y)
         pyautogui.click()
-        # pyautogui.click()
         if callback != None and callback_arg != None:
+            if callable(callback_arg):
+                callback_arg = callback_arg()
             callback(callback_arg)
 
 def click_image(png_name):
