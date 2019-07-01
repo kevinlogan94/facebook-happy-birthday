@@ -1,5 +1,11 @@
 # facebook-happy-birthday
 
+An Automation script designed to wish your friends a happy birthday on Facebook.
+
+### Demo
+
+Coming soon...
+
 ### Requirements:
 
 - Python3
@@ -27,7 +33,7 @@ pip3 install pyautogui
 - You're using a Mac
 - You have already logged into Facebook
 
-## Trigger scripts
+## Trigger the script
 
 ```
 pip3 /path/to/facebook-happy-birthday/index.py
