@@ -51,9 +51,9 @@ def click_image(png_name):
     print("Clicked {0}".format(png_name))
 
 
-def search_screen_for_image(png_name):
+def search_screen_for_image(png_name, timeBeforeTimeout=10, logTimeout=True):
     location = None
-    timeout = time.time() + 10   # 10 seconds from now
+    timeout = time.time() + timeBeforeTimeout   # 10 seconds from now
     print("Searching for " + png_name)
     while location == None:
         time.sleep(0.25)  # set a delay so this doesn't hog cpu
@@ -61,7 +61,8 @@ def search_screen_for_image(png_name):
         # Kill this if it takes more than 10 seconds
         if time.time() > timeout:
             location = "Finish"
-            print("Couldn't find " + png_name + " in 10 seconds")
+            if logTimeout:
+                print("Couldn't find " + png_name + " in " + str(timeBeforeTimeout) + " seconds")
 
 
 def type_on_screen(text):

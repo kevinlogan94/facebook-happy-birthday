@@ -24,8 +24,11 @@ def open_brave():
     type_on_screen("Brave Browser")
     hit_enter_key()
 
-def check_for_browser_mac():
-    search_screen_for_image("images/redxicon.png")
+def check_for_brave_dark_mode():
+    search_screen_for_image("images/brave-bookmark-dark.png", 10)
+
+def check_for_brave_new_tab_dark_mode():
+    search_screen_for_image("images/brave-new-tab-dark.png", 10)
 
 def open_new_tab():
     hit_key_binding("command", "t")
@@ -44,10 +47,12 @@ def notification(message, title):
 
 
 def wish_everyone_happy_birthday():
-    click_all_images("images/birthday-text-area-her.png",
+    click_all_images("images/birthday-text-area.png",
                      send_happy_birthday_message, get_birthday_quote)
-    click_all_images("images/birthday-text-area-his.png",
-                     send_happy_birthday_message, get_birthday_quote)
+
+def wait_for_browser_to_process_happy_birthdays():
+    search_screen_for_image("images/birthday-text-area.png", 3, False)
+    print("Finished wishing everyone a happy birthday.")
 
 
 def send_happy_birthday_message(text):
