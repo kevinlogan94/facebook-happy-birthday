@@ -19,7 +19,7 @@ def notify(message, title):
 
 def click_all_images(png_name, callback=None, callback_arg=None):
     search_screen_for_image(png_name)
-    for location in list(pyautogui.locateAllOnScreen(png_name)):
+    for location in list(pyautogui.locateAllOnScreen(png_name)).reverse():
         image = pyautogui.center(location)
         x = image[0]
         y = image[1]
