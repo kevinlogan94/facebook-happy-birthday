@@ -26,12 +26,37 @@ git clone https://github.com/kevinlogan94/facebook-happy-birthday.git
 cd facebook-happy-birthday
 ```
 
-3. Install the required dependencies
-> I recommend using python virtual environments. You don't have to but highly recommend if you are planning on having multiple Python projects on your machine. 
+3. Install [pipenv](https://realpython.com/pipenv-guide/)
+
+> I have included pipenv in the setup to encourage virtual environments.
 
 ```
-pip3 install -r requirements.txt
+pip3 install pipenv
 ```
+
+4. Install dependencies
+
+> Running this command will also create the virtual environment within the /virtualenv folder under your root.
+
+If you plan to make changes...
+
+```
+pipenv install --dev
+```
+
+else...
+
+```
+pipenv install --ignore-pipfile
+```
+
+5. Run the virtual environment
+
+```
+pipenv shell
+```
+
+You should now be in within the virtual environment: (facebook-happy-birthday)
 
 ## This script makes the following assumptions
 
@@ -41,8 +66,10 @@ pip3 install -r requirements.txt
 
 ## Trigger the script
 
+> Since you're inside your virtual environment python acts as an alias to python3.
+
 ```
-pip3 /path/to/facebook-happy-birthday/index.py
+python /path/to/facebook-happy-birthday/index.py
 ```
 
-> Note: You will probably get a notification asking for you to give your terminal permission to use your accessibility tools. Approve this otherwise this script won't work.
+> You will probably get a notification asking for you to give your terminal permission to use your accessibility tools. Approve this otherwise this script won't work.
