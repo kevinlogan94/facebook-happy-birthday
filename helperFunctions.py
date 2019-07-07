@@ -17,7 +17,7 @@ def notify(message, title):
     p = subprocess.Popen(['osascript', '-'] + args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
     p.communicate(scpt)
 
-def click_all_images(png_name, callback=None, callback_arg=None):
+def click_all_images(png_name, callback=None):
     search_screen_for_image(png_name)
     for location in list(pyautogui.locateAllOnScreen(png_name))[::-1]:
         image = pyautogui.center(location)
@@ -29,10 +29,8 @@ def click_all_images(png_name, callback=None, callback_arg=None):
             y = y / 2
         pyautogui.moveTo(x, y)
         pyautogui.click()
-        if callback != None and callback_arg != None:
-            if callable(callback_arg):
-                callback_arg = callback_arg()
-            callback(callback_arg)
+        if callback != None:
+            callback()
 
 def click_image(png_name):
     # In case, a page is loading...

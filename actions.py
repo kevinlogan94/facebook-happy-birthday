@@ -47,15 +47,15 @@ def notification(message, title):
 
 
 def wish_everyone_happy_birthday():
-    click_all_images("images/birthday-text-area.png",
-                     send_happy_birthday_message, get_birthday_quote)
+    click_all_images("images/birthday-text-area.png", send_happy_birthday_message)
 
 def wait_for_browser_to_process_happy_birthdays():
+    # may be wise to change this and have it look if there is no more focused text boxes instead.
     search_screen_for_image("images/birthday-text-area.png", 3, False)
     print("Finished wishing everyone a happy birthday.")
 
 
-def send_happy_birthday_message(text):
-    type_then_enter(text)
+def send_happy_birthday_message():
+    type_then_enter(get_birthday_quote())
     # In case the first didn't go through.
     hit_enter_key()
