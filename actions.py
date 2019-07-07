@@ -25,14 +25,18 @@ def open_brave():
     type_on_screen("Brave Browser")
     hit_enter_key()
 
+
 def check_for_brave_dark_mode():
     search_screen_for_image("images/brave-bookmark-dark.png", 10)
+
 
 def check_for_brave_new_tab_dark_mode():
     search_screen_for_image("images/brave-new-tab-dark.png", 10)
 
+
 def open_new_tab():
     hit_key_binding("command", "t")
+
 
 def close_tab():
     hit_key_binding("command", "w")
@@ -43,12 +47,14 @@ def type_in_url(text):
     type_on_screen(text)
     hit_enter_key()
 
+
 def notification(message, title):
     notify(message, title)
 
 
 def wish_everyone_happy_birthday():
     click_all_images("images/birthday-text-area.png", send_happy_birthday_message)
+
 
 def wait_for_browser_to_process_happy_birthdays():
     wait_for_image_to_vanish("images/focused-text-area-bottom.png")

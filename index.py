@@ -14,7 +14,10 @@ from actions import wish_everyone_happy_birthday
 from actions import send_happy_birthday_message
 
 try:
-    notification("Your computer is being controlled by an automation script.","Facebook Happy Birthday")
+    notification(
+        "Your computer is being controlled by an automation script.",
+        "Facebook Happy Birthday",
+    )
     clear_mouse()
     open_brave()
     check_for_brave_dark_mode()
@@ -24,6 +27,6 @@ try:
     wish_everyone_happy_birthday()
     wait_for_browser_to_process_happy_birthdays()
     close_tab()
-    notification("Finished!","Facebook Happy Birthday")
+    notification("Finished!", "Facebook Happy Birthday")
 except KeyboardInterrupt:
-    notification("Cancelled!","Facebook Happy Birthday")
+    notification("Cancelled!", "Facebook Happy Birthday")
