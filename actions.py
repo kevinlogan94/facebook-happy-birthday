@@ -12,6 +12,7 @@ from helperFunctions import notify
 from helperFunctions import search_screen_for_image
 from helperFunctions import type_on_screen
 from helperFunctions import type_then_enter
+from helperFunctions import wait_for_image_to_vanish
 
 # designed to simply move the mouse of the way so it doesn't interfere with anything.
 def clear_mouse():
@@ -50,8 +51,7 @@ def wish_everyone_happy_birthday():
     click_all_images("images/birthday-text-area.png", send_happy_birthday_message)
 
 def wait_for_browser_to_process_happy_birthdays():
-    # may be wise to change this and have it look if there is no more focused text boxes instead.
-    search_screen_for_image("images/birthday-text-area.png", 3, False)
+    wait_for_image_to_vanish("images/focused-text-area-bottom.png")
     print("Finished wishing everyone a happy birthday.")
 
 

@@ -62,6 +62,17 @@ def search_screen_for_image(png_name, timeBeforeTimeout=10, logTimeout=True):
             if logTimeout:
                 print("Couldn't find " + png_name + " in " + str(timeBeforeTimeout) + " seconds")
 
+def wait_for_image_to_vanish(png_name, timeBeforeTimeout=10):
+    location = pyautogui.locateOnScreen(png_name)
+    timeout = time.time() + timeBeforeTimeout   # 10 seconds from now
+    print("Waiting for the image to remove itself from the screen: " + png_name)
+    while location != None:
+        time.sleep(0.25)  # set a delay so this doesn't hog cpu
+        location = pyautogui.locateOnScreen(png_name)
+        if time.time() > timeout:
+            location = None
+            print(png_name + " didn't vanish after " + timeBeforeTimeout + " seconds. Moving on...")
+
 
 def type_on_screen(text):
     pyautogui.typewrite(text)
