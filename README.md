@@ -69,7 +69,7 @@ You should now be in within the virtual environment: (facebook-happy-birthday)
 > Since you're inside your virtual environment python acts as an alias to python3.
 
 ```
-python /path/to/facebook-happy-birthday/index.py
+python index.py
 ```
 
 > You will probably get a notification asking for you to give your terminal permission to use your accessibility tools. Approve this otherwise this script won't work.
