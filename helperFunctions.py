@@ -1,11 +1,12 @@
 # Created by Kevin Logan on 6/19/19
 
 # functions to import into other files.
+import json
+import platform
 import pyautogui
+import random
 import subprocess
 import time
-import json
-import random
 
 
 def notify(message, title):
@@ -149,7 +150,8 @@ def extractComputerData():
         == 0
     ):
         RetinaScreen = True
-    data = {"RetinaScreen": RetinaScreen, "screenSize": pyautogui.size()}
+    
+    data = {"RetinaScreen": RetinaScreen, "screenSize": pyautogui.size(), "OS": platform.system()}
     print("Done!")
     return data
 
