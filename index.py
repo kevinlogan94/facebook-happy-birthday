@@ -7,7 +7,7 @@ from actions import close_tab
 from actions import notification
 from actions import open_brave
 from actions import clear_mouse
-from actions import open_new_tab
+from actions import open_new_window
 from actions import send_happy_birthday_message
 from actions import type_in_url
 from actions import wait_for_browser_to_process_happy_birthdays
@@ -21,7 +21,7 @@ try:
     clear_mouse()
     open_brave()
     check_for_brave_dark_mode()
-    open_new_tab()
+    open_new_window()
     check_for_brave_new_tab_dark_mode()
     type_in_url("https://www.facebook.com/events/birthdays/")
     wish_everyone_happy_birthday()

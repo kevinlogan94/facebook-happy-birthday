@@ -34,8 +34,8 @@ def check_for_brave_new_tab_dark_mode():
     search_screen_for_image("images/brave-new-tab-dark.png", 10)
 
 
-def open_new_tab():
-    hit_key_binding("command", "t")
+def open_new_window():
+    hit_key_binding("command", "n")
 
 
 def close_tab():
