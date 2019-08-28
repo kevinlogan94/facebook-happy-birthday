@@ -3,6 +3,7 @@
 ##
 
 from helperFunctions import click_all_images
+from helperFunctions import click_image
 from helperFunctions import computerData
 from helperFunctions import get_birthday_quote
 from helperFunctions import hit_enter_key
@@ -25,9 +26,26 @@ def open_brave():
     type_on_screen("Brave Browser")
     hit_enter_key()
 
+def open_browser():
+    if computerData["OS"] == "Darwin":
+        open_brave()
+    else:
+        open_chromium()
+
+def open_chromium():
+    click_image("images/raspian/browser.png")
 
 def check_for_brave_dark_mode():
     search_screen_for_image("images/brave-bookmark-dark.png", 10)
+
+def check_for_chromium():
+    search_screen_for_image("images/raspian/chromium-bookmark.png", 10)
+
+def check_for_browser():
+    if computerData["OS"] == "Darwin":
+        check_for_brave_dark_mode()
+    else:
+        search_screen_for_image("images/raspian/chromium-bookmark.png", 10)
 
 
 def check_for_brave_new_tab_dark_mode():
@@ -49,7 +67,10 @@ def type_in_url(text):
 
 
 def notification(message, title):
-    notify(message, title)
+    if computerData["OS"] == "Darwin":
+        notify(message, title)
+    else:
+        print(title + ": " + message)
 
 
 def wish_everyone_happy_birthday():
