@@ -72,21 +72,21 @@ def open_new_window():
     if computerData["OS"] == "Darwin":
         hit_key_binding("command", "n")
     else:
-        hit_key_binding("control", "n")
+        hit_key_binding("ctrl", "n")
 
 
 def close_tab():
     if computerData["OS"] == "Darwin":
         hit_key_binding("command", "w")
     else:
-        hit_key_binding("control", "w")
+        hit_key_binding("ctrl", "w")
 
 
 def type_in_url(text):
     if computerData["OS"] == "Darwin":
         hit_key_binding("command", "l")
     else:
-        hit_key_binding("control", "l")
+        hit_key_binding("ctrl", "l")
     type_on_screen(text)
     hit_enter_key()
 
