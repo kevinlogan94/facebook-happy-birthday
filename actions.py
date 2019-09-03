@@ -69,15 +69,24 @@ def check_for_new_tab():
 
 
 def open_new_window():
-    hit_key_binding("command", "n")
+    if computerData["OS"] == "Darwin":
+        hit_key_binding("command", "n")
+    else:
+        hit_key_binding("control", "n")
 
 
 def close_tab():
-    hit_key_binding("command", "w")
+    if computerData["OS"] == "Darwin":
+        hit_key_binding("command", "w")
+    else:
+        hit_key_binding("control", "w")
 
 
 def type_in_url(text):
-    hit_key_binding("command", "l")
+    if computerData["OS"] == "Darwin":
+        hit_key_binding("command", "l")
+    else:
+        hit_key_binding("control", "l")
     type_on_screen(text)
     hit_enter_key()
 
