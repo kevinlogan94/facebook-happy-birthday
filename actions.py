@@ -26,20 +26,25 @@ def open_brave():
     type_on_screen("Brave Browser")
     hit_enter_key()
 
+
 def open_browser():
     if computerData["OS"] == "Darwin":
         open_brave()
     else:
         open_chromium()
 
+
 def open_chromium():
     click_image("images/raspian/browser.png")
+
 
 def check_for_brave_dark_mode():
     search_screen_for_image("images/brave-bookmark-dark.png", 10)
 
+
 def check_for_chromium():
     search_screen_for_image("images/raspian/chromium-bookmark.png", 10)
+
 
 def check_for_browser():
     if computerData["OS"] == "Darwin":
@@ -50,6 +55,17 @@ def check_for_browser():
 
 def check_for_brave_new_tab_dark_mode():
     search_screen_for_image("images/brave-new-tab-dark.png", 10)
+
+
+def check_for_chromium_new_tab():
+    search_screen_for_image("images/raspian/chromium-tab.png", 10)
+
+
+def check_for_new_tab():
+    if computerData["OS"] == "Darwin":
+        check_for_brave_new_tab_dark_mode()
+    else:
+        check_for_chromium_new_tab()
 
 
 def open_new_window():

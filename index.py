@@ -2,7 +2,7 @@
 
 # Script to wish happy birthdays on facebook
 from actions import check_for_browser
-from actions import check_for_brave_new_tab_dark_mode
+from actions import check_for_new_tab
 from actions import close_tab
 from actions import notification
 from actions import open_browser
@@ -26,7 +26,7 @@ def job():
         open_browser()
         check_for_browser()
         open_new_window()
-        check_for_brave_new_tab_dark_mode()
+        check_for_new_tab()
         type_in_url("https://www.facebook.com/events/birthdays/")
         wish_everyone_happy_birthday()
         wait_for_browser_to_process_happy_birthdays()
@@ -35,7 +35,7 @@ def job():
     except KeyboardInterrupt:
         notification("Cancelled!", "Facebook Happy Birthday")
 
-schedule.every().day.at("14:17").do(job)
+schedule.every().day.at("08:00").do(job)
 
 while 1:
     schedule.run_pending()
