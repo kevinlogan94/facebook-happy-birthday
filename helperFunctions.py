@@ -91,7 +91,7 @@ def wait_for_image_to_vanish(png_name, timeBeforeTimeout=10):
             print(
                 png_name
                 + " didn't vanish after "
-                + timeBeforeTimeout
+                + str(timeBeforeTimeout)
                 + " seconds. Moving on..."
             )
 
